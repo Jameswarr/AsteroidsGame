@@ -1,15 +1,59 @@
+int myX;
+int myY;
+double myDirectionX;
+double myDirectionY;
+double myPointDirection;
+class SpaceShip;
 //your variable declarations here
 public void setup() 
 {
+  SpaceShip trek = new SpaceShip();
   //your code here
 }
-public void draw() 
-{
-  //your code here
+public void draw() {  
+  trek.show();
 }
-class SpaceShip //extends Floater  
+class SpaceShip extends Floater  
 {   
-    //your code here
+  public void setX(int x){
+    myX = x;
+  }
+  public int getX(){
+    return myX;
+  }
+  public void setY(int y){
+    myY = y; 
+  }
+  public int getY(){
+    return myY;
+  }
+  public void setDirectionX(double x){
+    myDirectionX = 0;
+  }
+  public double getDirectionX(){
+    return myDirectionX;
+  }
+  public void setDirectionY(double y){
+    myDirectionY = 0;
+  }
+  public double getDirectionY(){
+    return myDirectionY;
+  }
+  public void setPointDirection(int degrees){
+    myPointDirection = 0;
+  }
+  public double getPointDirection(){
+    return myPointDirection;
+  }
+  public SpaceShip(){
+    int corners;
+    int[] xCorners;
+    int[] yCorners;   
+    int myColor;   
+    double myCenterX, myCenterY;   
+    double myDirectionX, myDirectionY;  
+    double myPointDirection;
+  }
 }
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
