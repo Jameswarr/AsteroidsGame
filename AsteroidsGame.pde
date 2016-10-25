@@ -1,41 +1,37 @@
-int myX;
-int myY;
-double myDirectionX; 
-double myDirectionY;
-double myPointDirection;
 //your variable declarations here
 SpaceShip trek = new SpaceShip();
 public void setup() 
 {
-  background(255);
+  // background(255);
   size(600, 600);
   //your code here
 }
 public void keyTyped(){
-  if (key == 'h')
-  {
-    trek.setX(Math.random()*599 + 1);
-    trek.setY(Math.random()*599 + 1);
-    trek.setDirectionX(0);
+  if (key == 'h') {
+    trek.setX((int)(Math.random()*300+1));
+    trek.setY((int)(Math.random()*300+1));
+    trek.setDirectionX(Math.random()*100);
     System.out.println("i moved");
   }
 }
 public void draw() {  
+  background(255);
   trek.show();
+  trek.move();
 }
 class SpaceShip extends Floater  
 {   
   public void setX(int x){
-    myX = x;
+    myCenterX = x;
   }
   public int getX(){
-    return myX;
+    return (int)myCenterX;
   }
   public void setY(int y){
-    myY = y; 
+    myCenterY = y; 
   }
   public int getY(){
-    return myY;
+    return (int)myCenterY;
   }
   public void setDirectionX(double x){
     myDirectionX = 0;
@@ -120,7 +116,7 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     }    
     if(myCenterY >height)
     {    
-      myCenterY = 0;    
+      myCenterY = 0;   
     }   
     else if (myCenterY < 0)
     {     
