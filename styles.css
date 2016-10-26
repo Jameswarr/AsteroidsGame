@@ -1,6 +1,6 @@
 
 body {
-    background-color: rgb(200,200,200);
+    background-color: #e6ccff;
     color: rgb(0,0,0);
     font-family: "Open Sans", sans-serif;
     text-align: center;
@@ -9,7 +9,7 @@ body {
 #content {
     display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
 }
 
 header {
@@ -19,5 +19,10 @@ header {
 footer {
 	font-style: italic;
 	font-size: 90%;
+    color: white;
+    background-color: #cc99ff;
+    margin: auto;
+    width: 30%;
+    border: 5px inset #bf80ff;
 }
 

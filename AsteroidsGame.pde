@@ -1,23 +1,42 @@
 //your variable declarations here
 SpaceShip trek = new SpaceShip();
+Star[] rats;
 public void setup() 
 {
   // background(255);
   size(600, 600);
+  rats = new Star[100];
+  for(int i = 0; i<rats.length; i ++){
+    rats[i] = new Star();
+  }
   //your code here
 }
+
 public void keyTyped(){
   if (key == 'h') {
     trek.setX((int)(Math.random()*300+1));
     trek.setY((int)(Math.random()*300+1));
     trek.setDirectionX(Math.random()*100);
-    System.out.println("i moved");
+  }
+  if(key == 'a'){
+    trek.rotate(15);
+  }
+  if(key == 'd'){
+    trek.rotate(-15);
+  }
+  if(key == 'w'){
+    trek.accelerate(0.1);
+  }
+  if(key == 's'){
+    trek.accelerate(-0.1);
   }
 }
+
 public void draw() {  
-  background(255);
+  background(0);
   trek.show();
   trek.move();
+  rats.show();
 }
 class SpaceShip extends Floater  
 {   
@@ -63,8 +82,27 @@ class SpaceShip extends Floater
     myDirectionX = 0;
     myDirectionY = 0; 
     myPointDirection = 0;
+    myColor = 255;
   }
 }
+
+
+//background stars
+class Star {
+  int starX, starY, starSize;
+  public Star(){
+    starX = (int)(Math.random()*500);
+    starY = (int)(Math.random()*500);
+    starSize = 10;
+  }
+  public void show(){
+     noStroke();
+     fill(255);
+     ellipse(starX, starY, starSize, starSize);
+  }
+}
+
+
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
   protected int corners;  //the number of corners, a triangular floater has 3   
