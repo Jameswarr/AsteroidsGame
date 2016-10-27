@@ -5,7 +5,7 @@ public void setup()
 {
   // background(255);
   size(600, 600);
-  rats = new Star[100];
+  rats = new Star[(int)(Math.random()*200+100)];
   for(int i = 0; i<rats.length; i ++){
     rats[i] = new Star();
   }
@@ -36,7 +36,10 @@ public void draw() {
   background(0);
   trek.show();
   trek.move();
-  rats.show();
+  for (Star stars : rats)
+    {
+      stars.show();
+    }
 }
 class SpaceShip extends Floater  
 {   
@@ -89,11 +92,12 @@ class SpaceShip extends Floater
 
 //background stars
 class Star {
-  int starX, starY, starSize;
+  int starX, starY;
+  float starSize;
   public Star(){
-    starX = (int)(Math.random()*500);
-    starY = (int)(Math.random()*500);
-    starSize = 10;
+    starX = (int)(Math.random()*600);
+    starY = (int)(Math.random()*600);
+    starSize = 1.5;
   }
   public void show(){
      noStroke();
