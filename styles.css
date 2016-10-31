@@ -1,3 +1,8 @@
+header {
+    border: inset #bf80ff;
+    background-image: url("Purple_Galaxy.jpg");
+    color: white;
+}
 
 body {
     background-color: #e6ccff;
@@ -24,5 +29,6 @@ footer {
     margin: auto;
     width: 30%;
     border: 5px inset #bf80ff;
+    padding-bottom: 25px;
 }
 
