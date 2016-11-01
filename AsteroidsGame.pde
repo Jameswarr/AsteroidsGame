@@ -1,5 +1,6 @@
 //your variable declarations here
 SpaceShip trek = new SpaceShip();
+Asteroids bob = new Asteroids();
 Star[] rats;
 public void setup() 
 {
@@ -14,8 +15,8 @@ public void setup()
 
 public void keyTyped(){
   if (key == 'h') {
-    trek.setX((int)(Math.random()*300+1));
-    trek.setY((int)(Math.random()*300+1));
+    trek.setX((int)(Math.random()*600+1));
+    trek.setY((int)(Math.random()*600+1));
     trek.setDirectionX(Math.random()*100);
   }
   if(key == 'a'){
@@ -36,6 +37,7 @@ public void draw() {
   background(0);
   trek.show();
   trek.move();
+  bob.show();
   for (Star stars : rats)
     {
       stars.show();
@@ -89,6 +91,54 @@ class SpaceShip extends Floater
   }
 }
 
+class Asteroids extends Floater
+{
+  public void setX(int x){
+    myCenterX = x;
+  }
+  public int getX(){
+    return (int)myCenterX;
+  }
+  public void setY(int y){
+    myCenterY = y; 
+  }
+  public int getY(){
+    return (int)myCenterY;
+  }
+  public void setDirectionX(double x){
+    myDirectionX = 0;
+  }
+  public double getDirectionX(){
+    return myDirectionX;
+  }
+  public void setDirectionY(double y){
+    myDirectionY = 0;
+  }
+  public double getDirectionY(){
+    return myDirectionY;
+  }
+  public void setPointDirection(int degrees){
+    myPointDirection = 0;
+  }
+  public double getPointDirection(){
+    return myPointDirection;
+  }
+
+  public Asteroids(){
+    corners = 6;
+    xCorners = new int[corners];
+    yCorners = new int[corners];
+    int[] xS = {-11, 7, 10, 6, -10. -7}
+    int[] yS = {-8, -8, 0, 10, 8, 0}
+    xCorners[0] = -11;
+    yCorners[0] = -8;
+  }
+
+  public void move(){
+    rotate(rotSpeed);
+    super.move();
+  }
+}
 
 //background stars
 class Star {
