@@ -43,6 +43,9 @@ public void draw() {
       stars.show();
     }
 }
+
+
+
 class SpaceShip extends Floater  
 {   
   public void setX(int x){
@@ -93,6 +96,7 @@ class SpaceShip extends Floater
 
 class Asteroids extends Floater
 {
+  private int rotSpeed;
   public void setX(int x){
     myCenterX = x;
   }
@@ -126,12 +130,13 @@ class Asteroids extends Floater
 
   public Asteroids(){
     corners = 6;
-    xCorners = new int[corners];
-    yCorners = new int[corners];
-    int[] xS = {-11, 7, 10, 6, -10. -7}
-    int[] yS = {-8, -8, 0, 10, 8, 0}
-    xCorners[0] = -11;
-    yCorners[0] = -8;
+    int[] xS = {-11, 7, 10, 6, -10, -7};
+    int[] yS = {-8, -8, 0, 10, 8, 0};
+    xCorners = xS;
+    yCorners = yS;
+    myCenterX = 100;
+    myCenterY = 100;
+    myColor = 255;
   }
 
   public void move(){
