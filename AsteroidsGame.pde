@@ -1,16 +1,19 @@
 //your variable declarations here
 SpaceShip trek = new SpaceShip();
-Asteroids bob = new Asteroids();
+Asteroids[] rocks;
 Star[] rats;
+
 public void setup() 
 {
-  // background(255);
   size(600, 600);
+  rocks = new Asteroids[25];
   rats = new Star[(int)(Math.random()*200+100)];
   for(int i = 0; i<rats.length; i ++){
     rats[i] = new Star();
   }
-  //your code here
+  for(int i = 0; i<rocks.length; i ++){
+    rocks[i] = new Asteroids();
+  }
 }
 
 public void keyTyped(){
@@ -37,11 +40,15 @@ public void draw() {
   background(0);
   trek.show();
   trek.move();
-  bob.show();
+  for (int i = 0; i<rocks.length; i ++)
+  {
+    rocks.show();
+    rocks.move();
+  }
   for (Star stars : rats)
     {
       stars.show();
-    }
+  }
 }
 
 
@@ -96,7 +103,7 @@ class SpaceShip extends Floater
 
 class Asteroids extends Floater
 {
-  private int rotSpeed;
+  private int rotSpeed = 5;
   public void setX(int x){
     myCenterX = x;
   }
@@ -136,11 +143,13 @@ class Asteroids extends Floater
     yCorners = yS;
     myCenterX = 100;
     myCenterY = 100;
-    myColor = 255;
+    myColor = 100;
   }
 
   public void move(){
     rotate(rotSpeed);
+    myCenterX ++;
+    myCenterY ++;
     super.move();
   }
 }
