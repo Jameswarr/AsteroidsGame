@@ -6,7 +6,7 @@ Star[] rats;
 public void setup() 
 {
   size(600, 600);
-  rocks = new Asteroids[25];
+  rocks = new Asteroids[15];
   rats = new Star[(int)(Math.random()*200+100)];
   for(int i = 0; i<rats.length; i ++){
     rats[i] = new Star();
@@ -40,10 +40,10 @@ public void draw() {
   background(0);
   trek.show();
   trek.move();
-  for (int i = 0; i<rocks.length; i ++)
+  for (Asteroids asteroids : rocks)
   {
-    rocks.show();
-    rocks.move();
+    asteroids.show();
+    asteroids.move();
   }
   for (Star stars : rats)
     {
@@ -103,7 +103,7 @@ class SpaceShip extends Floater
 
 class Asteroids extends Floater
 {
-  private int rotSpeed = 5;
+  private int rotSpeed;
   public void setX(int x){
     myCenterX = x;
   }
@@ -136,20 +136,21 @@ class Asteroids extends Floater
   }
 
   public Asteroids(){
+    rotSpeed = (int)(Math.random()*11-5);
     corners = 6;
-    int[] xS = {-11, 7, 10, 6, -10, -7};
+    int[] xS = {-11, 7, 10, 6, -10, -10};
     int[] yS = {-8, -8, 0, 10, 8, 0};
     xCorners = xS;
     yCorners = yS;
-    myCenterX = 100;
-    myCenterY = 100;
+    myCenterX = (int)(Math.random()*600);
+    myCenterY = (int)(Math.random()*600);
     myColor = 100;
+    myDirectionX = (int)(Math.random()*11 - 3);
+    myDirectionY = (int)(Math.random()*11 - 3);
   }
 
   public void move(){
     rotate(rotSpeed);
-    myCenterX ++;
-    myCenterY ++;
     super.move();
   }
 }
