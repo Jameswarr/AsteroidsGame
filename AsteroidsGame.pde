@@ -6,6 +6,7 @@ Star[] rats;
 public void setup() 
 {
   size(600, 600);
+  background(80, 60, 100);
   rocks = new Asteroids[15];
   rats = new Star[(int)(Math.random()*200+100)];
   for(int i = 0; i<rats.length; i ++){
@@ -37,7 +38,7 @@ public void keyTyped(){
 }
 
 public void draw() {  
-  background(0);
+  background(80, 60, 100);
   trek.show();
   trek.move();
   for (Asteroids asteroids : rocks)
@@ -144,7 +145,7 @@ class Asteroids extends Floater
     yCorners = yS;
     myCenterX = (int)(Math.random()*600);
     myCenterY = (int)(Math.random()*600);
-    myColor = 100;
+    myColor = color(210, 167, 210);
     myDirectionX = (int)(Math.random()*11 - 3);
     myDirectionY = (int)(Math.random()*11 - 3);
   }
