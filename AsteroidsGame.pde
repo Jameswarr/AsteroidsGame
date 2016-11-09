@@ -1,20 +1,20 @@
-//your variable declarations here
+ArrayList<Asteroids> rocks = new ArrayList<Asteroids>();
 SpaceShip trek = new SpaceShip();
-Asteroids[] rocks;
 Star[] rats;
 
 public void setup() 
 {
   size(600, 600);
   background(80, 60, 100);
-  rocks = new Asteroids[15];
+  // rocks = new Asteroids[15];
   rats = new Star[(int)(Math.random()*200+100)];
   for(int i = 0; i<rats.length; i ++){
     rats[i] = new Star();
   }
-  for(int i = 0; i<rocks.length; i ++){
-    rocks[i] = new Asteroids();
-  }
+  rocks.add(new Asteroids());
+  // for(int i = 0; i<rocks.length; i ++){
+  //   rocks[i] = new Asteroids();
+  // }
 }
 
 public void keyTyped(){
@@ -41,14 +41,13 @@ public void draw() {
   background(80, 60, 100);
   trek.show();
   trek.move();
-  for (Asteroids asteroids : rocks)
-  {
-    asteroids.show();
-    asteroids.move();
-  }
   for (Star stars : rats)
     {
       stars.show();
+  }
+  for (int i = 0; i < rocks.size(); i ++)
+  {
+    rocks.add(new Asteroids());
   }
 }
 
