@@ -11,7 +11,9 @@ public void setup()
   for(int i = 0; i<rats.length; i ++){
     rats[i] = new Star();
   }
-  rocks.add(new Asteroids());
+  for(int i = 0; i < rocks.size(); i ++){
+    rocks.add(new Asteroids());
+  }
   // for(int i = 0; i<rocks.length; i ++){
   //   rocks[i] = new Asteroids();
   // }
@@ -45,9 +47,9 @@ public void draw() {
     {
       stars.show();
   }
-  for (int i = 0; i < rocks.size(); i ++)
-  {
-    rocks.add(new Asteroids());
+  for(int i = 0; i<rocks.size(); i ++){
+    rocks.get(nI).show();
+    rocks.get(nI).move();
   }
 }
 
