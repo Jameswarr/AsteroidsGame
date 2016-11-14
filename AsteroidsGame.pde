@@ -48,11 +48,12 @@ public void draw() {
       stars.show();
   }
   for(int i = 0; i<rocks.size(); i ++){
-    rocks.get(nI).show();
-    rocks.get(nI).move();
+    Asteroids first = (Asteroids)rocks.get(i);
+    System.out.println("Im shook");
+    first.show();
+    System.out.println("Im shown");
   }
 }
-
 
 
 class SpaceShip extends Floater  
