@@ -11,7 +11,7 @@ public void setup()
   for(int i = 0; i<rats.length; i ++){
     rats[i] = new Star();
   }
-  for(int i = 0; i < rocks.size(); i ++){
+  for(int i = 0; i < 10; i ++){
     rocks.add(new Asteroids());
   }
   // for(int i = 0; i<rocks.length; i ++){
@@ -48,10 +48,8 @@ public void draw() {
       stars.show();
   }
   for(int i = 0; i<rocks.size(); i ++){
-    Asteroids first = (Asteroids)rocks.get(i);
-    System.out.println("Im shook");
-    first.show();
-    System.out.println("Im shown");
+    rocks.get(i).show();
+    rocks.get(i).move();
   }
 }
 
