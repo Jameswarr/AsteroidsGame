@@ -14,9 +14,6 @@ public void setup()
   for(int i = 0; i < 10; i ++){
     rocks.add(new Asteroids());
   }
-  // for(int i = 0; i<rocks.length; i ++){
-  //   rocks[i] = new Asteroids();
-  // }
 }
 
 public void keyTyped(){
@@ -37,6 +34,8 @@ public void keyTyped(){
   if(key == 's'){
     trek.accelerate(-0.1);
   }
+  //if(key == ' ')
+  //bList.add(new Bullet());
 }
 
 public void draw() {  
@@ -50,6 +49,11 @@ public void draw() {
   for(int i = 0; i<rocks.size(); i ++){
     rocks.get(i).show();
     rocks.get(i).move();
+  }
+  for(int i = 0; i < rocks.size(); i ++) {
+    if(dist(trek.getX(), trek.getY(), rocks.get(i).getX(), rocks.get(i).getY()) < 20){
+      rocks.remove(i);
+    }
   }
 }
 
