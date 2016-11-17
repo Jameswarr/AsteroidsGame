@@ -53,6 +53,7 @@ public void draw() {
   for(int i = 0; i < rocks.size(); i ++) {
     if(dist(trek.getX(), trek.getY(), rocks.get(i).getX(), rocks.get(i).getY()) < 20){
       rocks.remove(i);
+      rocks.add(new Asteroids());
     }
   }
 }
