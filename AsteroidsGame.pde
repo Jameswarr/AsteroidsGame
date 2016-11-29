@@ -20,7 +20,9 @@ public void keyTyped(){
   if (key == 'h') {
     trek.setX((int)(Math.random()*600+1));
     trek.setY((int)(Math.random()*600+1));
-    trek.setDirectionX(Math.random()*100);
+    trek.setDirectionX(0);
+    trek.setDirectionY(0);
+    trek.setPointDirection((int)(Math.random()*360));
   }
   if(key == 'a'){
     trek.rotate(15);
@@ -74,19 +76,19 @@ class SpaceShip extends Floater
     return (int)myCenterY;
   }
   public void setDirectionX(double x){
-    myDirectionX = 0;
+    myDirectionX = x;
   }
   public double getDirectionX(){
     return myDirectionX;
   }
   public void setDirectionY(double y){
-    myDirectionY = 0;
+    myDirectionY = y;
   }
   public double getDirectionY(){
     return myDirectionY;
   }
   public void setPointDirection(int degrees){
-    myPointDirection = 0;
+    myPointDirection = degrees;
   }
   public double getPointDirection(){
     return myPointDirection;

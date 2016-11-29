@@ -30,21 +30,17 @@ class Bullet extends Floater
   public double getPointDirection(){
     return myPointDirection;
   }
-  Bullet(Spaceship theShip){
-	corners = 4;
-    int[] xS = {-8, 16, -8, -6};
-    int[] yS = {-8, 0, 8, 0};
-    xCorners = xS; 
-    yCorners = yS;
-    myCenterX = 300;
-    myCenterY = 300;
-    myDirectionX = 5 * Math.cos(dRadians) + trek.getDirectionX;
-    myDirectionY = 5 * Math.sin(dRadians) + trek.getDirectionY; 
-    myPointDirection = double dRadians =myPointDirection*(Math.PI/180);
+  Bullet(SpaceShip theShip){
+  	myPointDirection = trek.getPointDirection();
+  	double dRadians =myPointDirection*(Math.PI/180);
+    myCenterX = trek.getX();
+    myCenterY = trek.getY();
+    myDirectionX = 5 * Math.cos(dRadians) + trek.getDirectionX();
+    myDirectionY = 5 * Math.sin(dRadians) + trek.getDirectionY(); 
     myColor = 255;
   }
   public void show(){
-  	ellipse(getDirectionX(), getDirectionY(), 10, 10);
+  	ellipse(getX(), getY(), 10, 10);
   }
   
 	
