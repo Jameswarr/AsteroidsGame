@@ -1,3 +1,4 @@
+int bu1, bu2;
 class Bullet extends Floater 
 {
   public void setX(int x){
@@ -13,24 +14,24 @@ class Bullet extends Floater
     return (int)myCenterY;
   }
   public void setDirectionX(double x){
-    myDirectionX = 0;
+    myDirectionX = x;
   }
   public double getDirectionX(){
     return myDirectionX;
   }
   public void setDirectionY(double y){
-    myDirectionY = 0;
+    myDirectionY = y;
   }
   public double getDirectionY(){
     return myDirectionY;
   }
   public void setPointDirection(int degrees){
-    myPointDirection = 0;
+    myPointDirection = degrees;
   }
   public double getPointDirection(){
     return myPointDirection;
   }
-  Bullet(SpaceShip theShip){
+  public Bullet(){
   	myPointDirection = trek.getPointDirection();
   	double dRadians =myPointDirection*(Math.PI/180);
     myCenterX = trek.getX();
@@ -41,6 +42,10 @@ class Bullet extends Floater
   }
   public void show(){
   	ellipse(getX(), getY(), 10, 10);
+  }
+  public void move(){
+  	myCenterX += myDirectionX;    
+    myCenterY += myDirectionY;
   }
   
 	

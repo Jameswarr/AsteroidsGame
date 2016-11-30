@@ -1,6 +1,7 @@
 ArrayList<Asteroids> rocks = new ArrayList<Asteroids>();
 SpaceShip trek = new SpaceShip();
 Star[] rats;
+ArrayList<Bullet> pew = new ArrayList<Bullet>();
 
 public void setup() 
 {
@@ -36,8 +37,9 @@ public void keyTyped(){
   if(key == 's'){
     trek.accelerate(-0.1);
   }
-  //if(key == ' ')
-  //bList.add(new Bullet());
+  if(key == 'l'){
+    pew.add(new Bullet());    
+  }
 }
 
 public void draw() {  
@@ -58,6 +60,11 @@ public void draw() {
       rocks.add(new Asteroids());
     }
   }
+  for(int i = 0; i < pew.size(); i ++){
+    pew.get(i).show();
+    pew.get(i).move();
+  }
+
 }
 
 
