@@ -37,7 +37,7 @@ public void keyTyped(){
   if(key == 's'){
     trek.accelerate(-0.1);
   }
-  if(key == 'l'){
+  if(key == ' '){
     pew.add(new Bullet());    
   }
 }
@@ -64,7 +64,13 @@ public void draw() {
     pew.get(i).show();
     pew.get(i).move();
   }
-
+  for(int i = 0; i < pew.size(); i ++) {
+    if(dist(pew.get(i).getX(), pew.get(i).getY(), rocks.get(i).getX(), rocks.get(i).getY()) < 1){
+      rocks.remove(i);
+      pew.remove(i);
+      break;
+    }
+  }
 }
 
 
