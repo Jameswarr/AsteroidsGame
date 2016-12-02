@@ -34,13 +34,15 @@ class Bullet extends Floater
   public Bullet(){
   	myPointDirection = trek.getPointDirection();
   	double dRadians =myPointDirection*(Math.PI/180);
-    myCenterX = trek.getX();
+    myCenterX = trek.getX() + 17;
     myCenterY = trek.getY();
     myDirectionX = 5 * Math.cos(dRadians) + trek.getDirectionX();
     myDirectionY = 5 * Math.sin(dRadians) + trek.getDirectionY(); 
-    myColor = 255;
+    myColor = color(255, 20, 100);
   }
   public void show(){
+  	stroke(255, 255, 255);
+  	fill(230, 230, 0);
   	ellipse(getX(), getY(), 10, 10);
   }
   public void move(){

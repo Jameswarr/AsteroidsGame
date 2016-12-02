@@ -2,6 +2,7 @@ ArrayList<Asteroids> rocks = new ArrayList<Asteroids>();
 SpaceShip trek = new SpaceShip();
 Star[] rats;
 ArrayList<Bullet> pew = new ArrayList<Bullet>();
+int score = 0; 
 
 public void setup() 
 {
@@ -43,7 +44,7 @@ public void keyTyped(){
 }
 
 public void draw() {  
-  background(80, 60, 100);
+  background(75, 60, 100); //80, 60, 100
   trek.show();
   trek.move();
   for (Star stars : rats)
@@ -64,12 +65,23 @@ public void draw() {
     pew.get(i).show();
     pew.get(i).move();
   }
-  for(int i = 0; i < pew.size(); i ++) {
-    if(dist(pew.get(i).getX(), pew.get(i).getY(), rocks.get(i).getX(), rocks.get(i).getY()) < 1){
-      rocks.remove(i);
-      pew.remove(i);
-      break;
+  for(int p = 0; p < pew.size(); p ++) {
+    for(int i = 0; i < rocks.size(); i ++){
+        if(dist(pew.get(p).getX(), pew.get(p).getY(), rocks.get(i).getX(), rocks.get(i).getY()) < 20){
+          rocks.remove(i);
+          score ++;
+          rocks.add(new Asteroids());
+          pew.remove(p);
+          break;
+        }
     }
+  }
+  fill(255, 255,255);
+  textSize(20);
+  text("Score: " + score, 500, 40);
+  if(score > 100){
+    textSize(100);
+    text("You win!", 300, 300);
   }
 }
 
@@ -165,7 +177,7 @@ class Asteroids extends Floater
     yCorners = yS;
     myCenterX = (int)(Math.random()*600);
     myCenterY = (int)(Math.random()*600);
-    myColor = color(210, 167, 210);
+    myColor = color(210, 167, 210); //210, 167, 210
     myDirectionX = (int)(Math.random()*11 - 3);
     myDirectionY = (int)(Math.random()*11 - 3);
   }
