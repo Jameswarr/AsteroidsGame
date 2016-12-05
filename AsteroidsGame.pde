@@ -3,6 +3,7 @@ SpaceShip trek = new SpaceShip();
 Star[] rats;
 ArrayList<Bullet> pew = new ArrayList<Bullet>();
 int score = 0; 
+int health = 100;
 
 public void setup() 
 {
@@ -41,11 +42,15 @@ public void keyTyped(){
   if(key == ' '){
     pew.add(new Bullet());    
   }
+  if(key == 'r'){
+    score =0;
+    health = 100;
+  }
 }
 
 public void draw() {  
   background(75, 60, 100); //80, 60, 100
-  trek.show();
+  trek.show(health, 5);
   trek.move();
   for (Star stars : rats)
     {
@@ -55,17 +60,18 @@ public void draw() {
     rocks.get(i).show();
     rocks.get(i).move();
   }
-  for(int i = 0; i < rocks.size(); i ++) {
+  for(int i = 0; i < rocks.size(); i ++) { //distance between rock and ship
     if(dist(trek.getX(), trek.getY(), rocks.get(i).getX(), rocks.get(i).getY()) < 20){
       rocks.remove(i);
       rocks.add(new Asteroids());
+      health -= 10;
     }
   }
   for(int i = 0; i < pew.size(); i ++){
     pew.get(i).show();
     pew.get(i).move();
   }
-  for(int p = 0; p < pew.size(); p ++) {
+  for(int p = 0; p < pew.size(); p ++) { //distance between asteroid and bullet
     for(int i = 0; i < rocks.size(); i ++){
         if(dist(pew.get(p).getX(), pew.get(p).getY(), rocks.get(i).getX(), rocks.get(i).getY()) < 20){
           rocks.remove(i);
@@ -79,9 +85,9 @@ public void draw() {
   fill(255, 255,255);
   textSize(20);
   text("Score: " + score, 500, 40);
-  if(score > 100){
-    textSize(100);
-    text("You win!", 300, 300);
+  if(score > 4){
+    textSize(50);
+    text("You win!", 200, 300);                
   }
 }
 
@@ -131,6 +137,27 @@ class SpaceShip extends Floater
     myDirectionY = 0; 
     myPointDirection = 0;
     myColor = 255;
+  }
+  public void show(int w, int h){
+    // rect(trek.getX() -50, trek.getY() - 25, w, h);
+    if(health > 50){
+      fill(0, 255, 0);
+      rect(trek.getX() -50, trek.getY() - 25, w, h);
+    }
+    if(health <= 50){
+      fill(255, 255, 0);
+      rect(trek.getX() -50, trek.getY() - 25, w, h);
+    }
+    if(health < 30){
+      fill(255, 0, 0);
+      rect(trek.getX() -50, trek.getY() - 25, w, h);
+    }
+    if(health == 0){
+      fill(255, 255, 255);
+      textSize(25);
+      text("You Lose! Press 'r' to restart (;", 100, 300);
+    }
+  super.show();
   }
 }
 
