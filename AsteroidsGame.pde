@@ -64,7 +64,9 @@ public void draw() {
     if(dist(trek.getX(), trek.getY(), rocks.get(i).getX(), rocks.get(i).getY()) < 20){
       rocks.remove(i);
       rocks.add(new Asteroids());
-      health -= 10;
+      if(health > 0){
+        health -= 10;
+      }
     }
   }
   for(int i = 0; i < pew.size(); i ++){
@@ -90,7 +92,6 @@ public void draw() {
     text("You win!", 200, 300);                
   }
 }
-
 
 class SpaceShip extends Floater  
 {   
@@ -153,6 +154,8 @@ class SpaceShip extends Floater
       rect(trek.getX() -50, trek.getY() - 25, w, h);
     }
     if(health == 0){
+      fill(0, 0, 0);
+      rect(0, 0, 600, 600);
       fill(255, 255, 255);
       textSize(25);
       text("You Lose! Press 'r' to restart (;", 100, 300);
