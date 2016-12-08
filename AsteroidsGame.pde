@@ -87,8 +87,10 @@ public void draw() {
   fill(255, 255,255);
   textSize(20);
   text("Score: " + score, 500, 40);
-  if(score > 4){
+  if(score > 49){
     textSize(50);
+    trek.setDirectionX(0);
+    trek.setDirectionY(0);
     text("You win!", 200, 300);                
   }
 }
@@ -154,8 +156,6 @@ class SpaceShip extends Floater
       rect(trek.getX() -50, trek.getY() - 25, w, h);
     }
     if(health == 0){
-      fill(0, 0, 0);
-      rect(0, 0, 600, 600);
       fill(255, 255, 255);
       textSize(25);
       text("You Lose! Press 'r' to restart (;", 100, 300);
