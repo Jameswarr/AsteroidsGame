@@ -1,4 +1,4 @@
-SpaceShip [] james = new SpaceShip[3];
+SpaceShip [] james = new SpaceShip[1];
 Star [] sue = new Star[100];
 private boolean wPressed, aPressed, sPressed, dPressed, qPressed;
 public void setup() 
@@ -12,8 +12,6 @@ public void setup()
       sue[i] = new Star();
   }
   james[0].setX(james[0].getX());
-  james[1].setX(james[1].getX()+50);
-  james[2].setX(james[2].getX()-50);
   wPressed = false;
   aPressed = false;
   sPressed = false;
@@ -28,7 +26,7 @@ public void draw()
   }
  for (int i =0; i< james.length; i++) {
     james[i].move();
-    james[i].show(false);
+    james[i].show();
   }
   if (qPressed) {
     for (int i = 0; i < james.length; i ++) {
@@ -50,7 +48,7 @@ public void draw()
     if (wPressed) {
     for (int i = 0; i < james.length; i ++) {
       james[i].accelerate(.1);
-      james[i].show(true);
+      james[i].show();
      }
     }
      if (sPressed)
