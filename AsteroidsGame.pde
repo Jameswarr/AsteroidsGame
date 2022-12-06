@@ -1,5 +1,5 @@
 SpaceShip [] james = new SpaceShip[1];
-Star [] sue = new Star[100];
+Star [] sue = new Star[120];
 private boolean wPressed, aPressed, sPressed, dPressed, qPressed;
 public void setup() 
 {
