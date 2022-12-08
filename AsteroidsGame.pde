@@ -1,3 +1,4 @@
+ArrayList <Asteroid> chan = new ArrayList <Asteroid>();
 SpaceShip [] james = new SpaceShip[1];
 Star [] pham = new Star[120];
 private boolean wPressed, aPressed, sPressed, dPressed, qPressed;
