@@ -1,9 +1,9 @@
 class SpaceShip extends Floater  
 {   
     public SpaceShip(){
-      corners = 4;
-     int[] xS = {-8,16,-8,-2};
-     int[] yS = {-8,0,8,0};
+      corners = 8;
+     int[] xS = {-8,0,12,20,12,0,-8,-2};
+     int[] yS = {-8,-12,-4,0,4,12,8,0};
      xCorners = xS;
      yCorners = yS;
       myCenterX = 250;
