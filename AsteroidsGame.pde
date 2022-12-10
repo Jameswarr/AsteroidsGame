@@ -12,6 +12,9 @@ public void setup()
     for (int i = 0; i < pham.length; i++) {
       pham[i] = new Star();
   }
+  for(int j = 0; j < 10; j++){
+    chan.add(new Asteroid());
+  }
   james[0].setX(james[0].getX());
   wPressed = false;
   aPressed = false;
@@ -55,6 +58,16 @@ public void draw()
      if (sPressed)
     for (int i = 0; i < james.length; i ++) {
       james[i].accelerate(-.1);
+      }
+       for(int j = 0; j < chan. size(); j++){
+      chan.get(j).show();
+      chan.get(j).move();
+      for(int i = 0; i < james.length; i++){
+          if (dist(chan.get(j).getX(), chan.get(j).getY(), james[i].getX(), james[i].getY()) < 30 + 2 * chan.get(j).getMySize()) {
+      chan.remove(j);
+      chan.add(new Asteroid());
+  }
+      }
     }
   }
  
