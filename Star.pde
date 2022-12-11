@@ -6,7 +6,7 @@ class Star
 {
   myX = (int)(Math.random()*500);
   myY = (int)(Math.random()*500);
-  myColor = color(100,50,50);
+  myColor = color(0, 255, 0, (int)(Math.random()*100));
 }
 public void draw()
 {
