@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 	<head>
 		<meta charset="utf-8">
-		<title>AsteroidsGame</title>
-		<link href='https://fonts.googleapis.com/css?family=Rubik+Storm' rel='stylesheet' type='text/css'>
+		<title>Asteroids</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="styles.css">
+		<script src="Bullet.pde"></script>
 		<script src="processing.js"></script>
 		<style type=”text/css”>
-        </style>
+	</style>
 	</head>
 	<body>
 		<header>
-			<h1>Space</h1>
+			<h1>Asteroids</h1>
 		</header>
 			<section id="content">
-				<canvas id="AsteroidsGame" data-processing-sources="Asteroid.pde AsteroidsGame.pde Floater.pde Spaceship.pde Star.pde">
+				<canvas id="AsteroidsGame" data-processing-sources="AsteroidsGame.pde">
 				</canvas>
 		    </section>
+		    <!-- <div id="container">
+			    <div id="first"></div>
+			    <div id="second"></div>
+			    <div id="clear"></div>
+			</div> -->
 	    <footer>
-		    W Key (accelerate), S Key (decelerate), D Key (turns right), A Key (turns left), Q Key (hyperspace)
+	    	<br>GOAL: GET TO 50 POINTS BEFORE YOUR HEALTH RUNS OUT</br>
+		    <br>w = accelerate</br>
+		    <br>s = deccelerate</br>
+		    <br>d = rotate left</br>
+		    <br>a = rotate right</br>
+		    <br>space = shoot</br>
+		    <br>h = hyperspace</br>
+		    <br>r = restart</br>
 	    </footer>
 	</body>
 </html>
