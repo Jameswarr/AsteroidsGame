@@ -1,7 +1,8 @@
+private boolean wPressed, aPressed, sPressed, dPressed, qPressed, ePressed;
 ArrayList <Asteroid> chan = new ArrayList <Asteroid>();
+ArrayList <Bullet> raymond = new ArrayList <Bullet>();
 SpaceShip [] james = new SpaceShip[1];
 Star [] pham = new Star[120];
-private boolean wPressed, aPressed, sPressed, dPressed, qPressed;
 public void setup() 
 {
   size(500,500);
@@ -15,9 +16,9 @@ public void setup()
   for(int j = 0; j < 10; j++){
     chan.add(new Asteroid());
   }
-  james[0].setX(james[0].getX());
   wPressed = false;
   aPressed = false;
+  ePressed = false;
   sPressed = false;
   dPressed = false;
   qPressed = false;
@@ -28,7 +29,7 @@ public void draw()
   for (int i = 0; i < pham.length; i ++) {
     pham[i].draw();
   }
- for (int i =0; i< james.length; i++) {
+ for (int i = 0; i < james.length; i++) {
     james[i].move();
     james[i].show();
   }
@@ -48,30 +49,51 @@ public void draw()
      if (dPressed)
     for (int i = 0; i < james.length; i ++) {
       james[i].turn(10);
-    }
+    }{
+    fill(200);
+    textSize(25);
+    text("Pew", 50, 35);
+  }
     if (wPressed) {
     for (int i = 0; i < james.length; i ++) {
       james[i].accelerate(.1);
       james[i].show();
      }
     }
-     if (sPressed)
+    if (ePressed)
+    for (int i = 0; i < james.length; i ++) {
+      raymond.add(new Bullet(james[i]));
+    }
+      if (sPressed)
     for (int i = 0; i < james.length; i ++) {
       james[i].accelerate(-.1);
+    }
+    for (int i = 0; i < raymond.size(); i ++)
+  {
+    raymond.get(i).show();
+    raymond.get(i).move();
+  }
+  for (int k = 0; k < raymond.size(); k++)
+  {
+    for (int i = 0; i< chan.size(); i ++)
+   
+      if (dist(raymond.get(k).getX(), raymond.get(k).getY(), chan.get(i).getX(), chan.get(i).getY()) < 10)
+      {
+        chan.remove(i);
+        chan.add(new Asteroid());
       }
-       for(int j = 0; j < chan. size(); j++){
-      chan.get(j).show();
-      chan.get(j).move();
+  }
+    for(int c = 0; c < chan. size(); c++){
+      chan.get(c).show();
+      chan.get(c).move();
       for(int i = 0; i < james.length; i++){
-          if (dist(chan.get(j).getX(), chan.get(j).getY(), james[i].getX(), james[i].getY()) < 30 + 2 * chan.get(j).getMySize()) {
-      chan.remove(j);
+          if (dist(chan.get(c).getX(), chan.get(c).getY(), james[i].getX(), james[i].getY()) < 30 + 2 * chan.get(c).getMySize()) {
+      chan.remove(c);
       chan.add(new Asteroid());
   }
       }
     }
-  }
- 
-  
+}
   public void keyPressed() {
   if (key == 'w'||key=='W') {
     wPressed = true;
@@ -87,6 +109,9 @@ public void draw()
   }
   if (key == 'q'||key=='Q') {
     qPressed = true;
+  }
+     if (key == 'e'||key=='E') {
+    ePressed = true;
   }
  }
 public void keyReleased() {
@@ -104,5 +129,8 @@ public void keyReleased() {
   }
   if (key == 'q'||key=='Q') {
     qPressed = false;
+  }
+    if (key == 'e') {
+    ePressed = false;
   }
 }
