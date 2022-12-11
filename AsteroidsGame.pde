@@ -130,7 +130,7 @@ public void keyReleased() {
   if (key == 'q'||key=='Q') {
     qPressed = false;
   }
-    if (key == 'e') {
+    if (key == 'e'||key=='E') {
     ePressed = false;
   }
 }
