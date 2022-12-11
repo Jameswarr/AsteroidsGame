@@ -1,4 +1,4 @@
-header {
+body {
     background-image:url("OIP (20).jpg");
         color: rgb(200,200,200);)
     font-family: "Open Sans", sans-serif;
@@ -11,12 +11,11 @@ header {
     margin-right: auto
 }
 
-body {
+header {
 
 }
 
 footer {
 	font-style: italic;
 	font-size: 90%;
-	background-color: rgb(200,200,200);
 }
