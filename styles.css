@@ -1,6 +1,7 @@
 
 header {
     background-image: url("https://www.bing.com/images/search?view=detailV2&ccid=ealbiR5Z&id=C1A2C188E221091BDB455CC2409E535369BFD2F3&thid=OIP.ealbiR5ZOT7GsZhqFoVoJQHaEK&mediaurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2FPZiNfM2VA6w%2Fmaxresdefault.jpg&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.79a95b891e59393ec6b1986a16856825%3Frik%3D89K%252faVNTnkDCXA%26pid%3DImgRaw%26r%3D0&exph=720&expw=1280&q=jimmy+neutrons+toes&simid=607998598914073763&form=IRPRST&ck=19B8FC25B7611229A8E06B3A87D7788F&selectedindex=18&ajaxhist=0&ajaxserp=0&pivotparams=insightsToken%3Dccid_z%252Bry8FiC*cp_B29BFD936B3BD8C46415C6310CD455B7*mid_5EB8DE44166482519AE4F1AE84B7790945478D48*simid_608014241175653059*thid_OIP.z-ry8FiCXuUhyL1FPT8jNwHaFj&vt=0&sim=11&iss=VSI&ajaxhist=0&ajaxserp=0");
+    background-color: rgb(200,200,200);
     color: rgb(0,0,0);
     font-family: "Rubik Storm", sans-serif;
     text-align: center;
@@ -19,5 +20,5 @@ body {
 footer {
 	font-style: italic;
 	font-size: 90%;
-	color: rgb(0,0,0)
+	background-color: rgb(200,200,200);
 }
