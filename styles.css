@@ -1,7 +1,6 @@
-
 body {
-    background-image: url("bear.png.jpg");
-    color: rgb(0,0,0);
+    background-image:url("dog.jpg");
+        color: rgb(255,255,255);)
     font-family: "Open Sans", sans-serif;
     text-align: center;
 }
