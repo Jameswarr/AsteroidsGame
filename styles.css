@@ -1,5 +1,5 @@
 
-header {
+body {
     background-image: url("bear.png.jpg");
     background-color: rgb(200,200,200);
     color: rgb(0,0,0);
@@ -13,7 +13,7 @@ header {
     margin-right: auto
 }
 
-body {
+header {
 	
 }
 
