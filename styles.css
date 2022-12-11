@@ -1,5 +1,6 @@
-body {
-    background-image:url("dog.jpg");
+header {
+    background-image:url("himmy.jpg");
+	background color 
         color: rgb(200,200,200);)
     font-family: "Open Sans", sans-serif;
     text-align: center;
@@ -11,8 +12,8 @@ body {
     margin-right: auto
 }
 
-header {
-	
+body {
+
 }
 
 footer {
